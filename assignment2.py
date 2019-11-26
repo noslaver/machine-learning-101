@@ -1,5 +1,5 @@
 #################################
-# Your name:
+# Your name: Noam Koren
 #################################
 
 import itertools
@@ -128,8 +128,6 @@ class Assignment2(object):
         points = self.sample_from_D(m)
         points = points[points[:,0].argsort()] # sort by x
         for i, k in enumerate(ks):
-            print(f'k = {k}')
-
             empirical_error, true_error, _ = self.erm(points, m, k)
 
             errors[i] = [empirical_error, true_error]
@@ -165,8 +163,6 @@ class Assignment2(object):
         points = self.sample_from_D(m)
         points = points[points[:,0].argsort()] # sort by x
         for i, k in enumerate(ks):
-            print(f'k = {k}')
-
             empirical_error, true_error, _ = self.erm(points, m, k)
 
             errors[i] = [empirical_error, true_error]
@@ -180,7 +176,6 @@ class Assignment2(object):
         penalty_emp_err_sum = list(map(add, empirical_errs, penalties))
         plt.plot(ks, empirical_errs, 'x', label = 'empirical error')
         plt.plot(ks, true_errs, 'o', label = 'true error')
-        plt.plot(ks, penalties, 'o', label = 'ERM penalty')
         plt.plot(ks, penalties, 'o', label = 'ERM penalty')
         plt.plot(ks, penalty_emp_err_sum, 'o', label = 'ERM penalty + emipirical error')
         plt.legend(loc='upper right')
@@ -208,8 +203,6 @@ class Assignment2(object):
             test_points = test_points[test_points[:,0].argsort()] # sort by x
             holdout = points[:index]
             for k in ks:
-                print(f'k = {k}')
-
                 empirical_error, true_error, best_intervals = self.erm(test_points, m, k)
 
                 holdout_err = self.holdout_error(holdout, best_intervals)
@@ -220,8 +213,6 @@ class Assignment2(object):
 
     #################################
     # Place for additional methods
-
-
     #################################
 
     def intersection(self, first_interval, second_interval):
