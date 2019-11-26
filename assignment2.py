@@ -295,12 +295,9 @@ class Assignment2(object):
 
 if __name__ == '__main__':
     ass = Assignment2()
-    # ass.draw_sample_intervals(100, 3)
-    # ass.experiment_m_range_erm(10, 100, 5, 3, 100)
-    # ass.experiment_k_range_erm(1500, 1, 20, 1)
-    k = ass.experiment_k_range_erm(500, 1, 20, 1)
-    print(k)
-    k = ass.experiment_k_range_srm(500, 1, 20, 1)
-    print(k)
-    # k = ass.cross_validation(500, 3)
+    ass.draw_sample_intervals(100, 3)
+    ass.experiment_m_range_erm(10, 100, 5, 3, 100)
+    print(ass.experiment_k_range_erm(1500, 1, 20, 1))
+    print(ass.experiment_k_range_srm(1500, 1, 20, 1))
+    print(ass.cross_validation(1500, 3))
 
